@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const article = require('./model/article');
+const article = require('./models/article');
 
 
 //connect to mongoosedb
