@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const article = require('./models/article');
+const article = require('./model/article');
 
 
 //connect to mongoosedb
@@ -19,7 +19,7 @@ app.listen(3000, () => console.log("Server started"));
 
 
 //listing all 
-app.get('/article/all', async (req, res) => {
+app.get('/article/all', (req, res) => {
   article.find()
   then(result => {
     res.send( { article: result, title: 'article' });
