@@ -62,7 +62,7 @@ app.post('/article', (req, res) => {
   title: 'new article',
     description: 'article',
   });
-  blog.save()
+  app.save()
     .then(result => {
       res.redirect('/article');
     })
@@ -103,7 +103,7 @@ app.post('/article/id/like',  (req, res) => {
     article.likes = ++article.likes;
     console.log(article);
     article.save((err, newarticle) => {
-      return res.json(newarticle);
+      return res.json();
     })
     .catch(err => {
       console.log(err);
@@ -116,7 +116,7 @@ app.delete('/article/id/like', (req, res) => {
     const article = req.article;
     if (article.likes >= 1) article.likes = --article.likes;
     article.save((err, newarticle) => {
-      return res.json(newAarticle);
+      return res.json();
     })
     .catch(err => {
       console.log(err);
